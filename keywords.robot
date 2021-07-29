@@ -50,3 +50,12 @@ SFDC_AssignDatePickerValue
     [Documentation]    Assigns a value to the Date portion of the date picker. Does not assign values to Time portion
     [Arguments]    ${fieldApiName}    ${dateValue}
     TypeText     xpath\=//lightning-datepicker//input[@name\='${fieldApiName}']        ${dateValue}
+    
+SFDC_ClickFollowButtonOnRecordPage
+    [Documentation]    Clicks the Follow button on a Record page
+    ClickText           xpath\=//div[contains(@class,'chatterActionContainer')]//span[@title\='Follow']
+
+SFDC_NavigateToListRecord
+    [Documentation]    Clicks on the record link in a List View
+    [Arguments]        ${recordLinkText}
+    ClickText          xpath\=//th[@scope\='row']//a[contains(@class,'outputLookupLink') and @title\='${recordLinkText}']
